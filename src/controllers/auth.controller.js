@@ -72,3 +72,13 @@ export const logout = async (_req, res) => {
     return res.status(500).json({ msg: "Error interno del servidor" });
   }
 };
+
+export const updateProfile = async (req, res) => {
+    try {
+        const userData = matchedData(req);
+        const updatedUser = await userModel.findByIdAndUpdate(req.user.id, userData, { new: true }).select('-password');
+        res.json({ message: 'Perfil actualizado satisfactoriamente.', user: updatedUser });
+    } catch (error) {
+        res.status(500).json({ message: 'Error interno del servidor.', error });
+    }
+};

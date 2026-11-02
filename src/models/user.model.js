@@ -11,12 +11,11 @@ const UserSchema = new Schema({
     email: {
         type: String,
         unique: true,
-        //Todo: formato valido, isEmail()
+        required: true
     },
     password: {
         type: String,
         required: true
-        //Todo: hasheala papi
     },
     role: {
         type: String,

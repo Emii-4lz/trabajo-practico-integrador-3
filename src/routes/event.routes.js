@@ -1,5 +1,5 @@
 import { Router } from 'express';
-import { createEvent, updateEvent, getAllEvents, getEventById } from '../controllers/event.controller.js';
+import { createEvent, updateEvent, getAllEvents, getEventById, deleteEvent } from '../controllers/event.controller.js';
 import { authMiddleware } from '../middlewares/auth.middleware.js';
 import { validateRequest } from '../middlewares/validate.middleware.js';
 import { adminOrOwnerMiddleware } from '../middlewares/admin.or.owner.middleware.js';
